@@ -1,0 +1,78 @@
+# Installing required packages for Analysis.
+install.packages("tidyverse")
+install.packages("readr")
+install.packages("rio")
+install.packages("janitor")
+install_formats()
+
+
+# Loading Library
+library (tidyverse)
+library (readr)
+library (rio)
+library(janitor)
+
+
+# Dictionary Information Current Dictionary
+getwd()
+
+setwd() # Change Current Dictionary path
+
+# Importing Dataset Via rio package import function()
+
+ world_happiness_data <- import("2019.csv")
+ 
+ View(world_happiness_data) # view Dataset 
+ 
+# Summary of Dataset
+ 
+ colnames(world_happiness_data)  # -> To know the Column Name
+ 
+ glimpse(world_happiness_data) #Full summary of Dataset
+ 
+
+# Now we want Clean our Dataset
+ 
+ # I found column was upper case letters now we want convert into lower case. 
+ # And also use clean name function
+  
+ world_happiness_data <- world_happiness_data %>%
+           rename_with(tolower)
+ 
+ View(world_happiness_data)  # Looking all Upper case name was Covert into lower case
+ 
+ # Cleaning_Name Invaild or Unique name
+ world_happiness_data <- world_happiness_data %>%
+   clean_names()
+ 
+ view(world_happiness_data) # completed Name cleaning,
+ 
+ 
+ # Check the Columns Data type 
+ 
+ str(world_happiness_data)
+
+ # Looking all Cloumns was Right Data type no required to change data types.
+ 
+# Applying Sort function (Arrange) Dataset
+ 
+top_gdp_country <- world_happiness_data %>%
+  arrange(desc(gdp_per_capita)) %>%
+  head(10)
+ 
+head(top_gdp_country,10)
+
+ # Applying Filter 
+
+avg_gdp <- world_happiness_data %>%
+  summarise(avg_gdp = mean(gdp_per_capita)) %>%  # Create Avg_gdp_per_capita
+  pull(avg_gdp)
+
+above_avg_gdp <- world_happiness_data %>% # filter data above avg_gdp
+  filter(gdp_per_capita > avg_gdp) %>%
+  arrange(desc(gdp_per_capita))
+
+view(above_avg_gdp)
+
+ # Create Plot & Find Correlation between the GDP & Score
+
