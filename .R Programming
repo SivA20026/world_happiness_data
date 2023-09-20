@@ -4,6 +4,8 @@ install.packages("readr")
 install.packages("rio")
 install.packages("janitor")
 install_formats()
+install.packages("ggplot2")
+install.packages("maps")
 
 
 # Loading Library
@@ -11,7 +13,9 @@ library (tidyverse)
 library (readr)
 library (rio)
 library(janitor)
-
+library(ggplot2)
+library(maps)
+library(dlpyr)
 
 # Dictionary Information Current Dictionary
 getwd()
@@ -53,7 +57,9 @@ setwd() # Change Current Dictionary path
  str(world_happiness_data)
 
  # Looking all Cloumns was Right Data type no required to change data types.
- 
+                   
+  #                                              **ANALYZING_DATA**
+
 # Applying Sort function (Arrange) Dataset
  
 top_gdp_country <- world_happiness_data %>%
@@ -74,5 +80,49 @@ above_avg_gdp <- world_happiness_data %>% # filter data above avg_gdp
 
 view(above_avg_gdp)
 
- # Create Plot & Find Correlation between the GDP & Score
+# Createing scatter plot  To find the Correlation between GDP & Score.
+
+ggplot(data= world_happiness_data, mapping = aes( x= score,y= gdp_per_capita))+
+  geom_point(colour = 'red',size=1)+
+  geom_smooth(method = 'loess', formula = 'y ~ x')
+
+
+# Checking correlation between GDP per capita  Vs Perceptions_of_corruption
+ggplot(data= world_happiness_data, mapping = aes( x=gdp_per_capita ,y= perceptions_of_corruption))+
+  geom_point(colour = 'blue',size=1)+
+  geom_smooth(method = 'loess', formula = 'y ~ x')
+
+# Checking correlation between GDP per capita Vs freedom_to_make_life_choices
+ggplot(data= world_happiness_data, mapping = aes( x=gdp_per_capita,y=freedom_to_make_life_choices))+
+  geom_point(colour = 'black',size=1)+
+geom_smooth(method = 'loess',formula ="y ~ x")
+
+# Create World_map using (ggplot2) to Represent Country Score
+
+maps_data <- map_data("world")
+
+View(maps_data)
+
+# Now we create map_data Data frame with lan &lat of Country.
+
+world_maps_data <- left_join(world_happiness_data, maps_data, by = c("country_or_region" = "region"))
+
+view(world_maps_data)
+ # Created World map to visual based on country socre
+ggplot()+
+  geom_polygon(data = world_maps_data,aes(x=long ,y=lat,group = group,fill = score))+
+geom_polygon(data = world_maps_data, aes(x=long, y=lat, group = group), fill = NA, color = "black",size=0.1)
+# Createing scatter plot  To find the Correlation between GDP & Score.
+
+ggplot(data= world_happiness_data, mapping = aes( x= score,y= gdp_per_capita))+
+  geom_point(colour = 'red',size=1)+
+  geom_smooth(method = 'loess', formula = 'y ~ x')
+# Createing scatter plot  To find the Correlation between GDP & Score.
+
+ggplot(data= world_happiness_data, mapping = aes( x= score,y= gdp_per_capita))+
+  geom_point(colour = 'red',size=1)+
+  geom_smooth(method = 'loess', formula = 'y ~ x')
+
+
+
 
