@@ -112,17 +112,3 @@ view(world_maps_data)
 ggplot()+
   geom_polygon(data = world_maps_data,aes(x=long ,y=lat,group = group,fill = score))+
 geom_polygon(data = world_maps_data, aes(x=long, y=lat, group = group), fill = NA, color = "black",size=0.1)
-# Createing scatter plot  To find the Correlation between GDP & Score.
-
-ggplot(data= world_happiness_data, mapping = aes( x= score,y= gdp_per_capita))+
-  geom_point(colour = 'red',size=1)+
-  geom_smooth(method = 'loess', formula = 'y ~ x')
-# Createing scatter plot  To find the Correlation between GDP & Score.
-
-ggplot(data= world_happiness_data, mapping = aes( x= score,y= gdp_per_capita))+
-  geom_point(colour = 'red',size=1)+
-  geom_smooth(method = 'loess', formula = 'y ~ x')
-
-
-
-
