@@ -10,11 +10,14 @@ After Completing **Data Cleaning** & **Data validation** in **R Language**
 
 The correlations between the Country score and GDP per capita was indicating **(Correlation = 0.5)**. It a Positive Correlation Between the two varible in Our dataset. It mean country with hight GDP per capita was mostly Happiest country but it not 100%.  GDP per capita was based on Population and Earing will impact the GDP per capita. So based on plot Country GDP was play key role in World happines Rankings.
 
-**2**.Correlation Between **Country score & freedom**
+**2**.Correlation Between **Country_score & perceptions_of_corruption**
+![image](https://github.com/SivA20026/world_happiness_data/assets/137447479/08740ca6-cef6-417f-9603-f0d3945111cc)
 
-![image](https://github.com/SivA20026/world_happiness_data/assets/137447479/98b4956a-da0c-4210-9011-d51507733827)
 
-**3**.Correlation Between **Country score & GDP per capita**
+**3**.Correlation Between **GDP per capita  & healthy_life_expectancy**
+![image](https://github.com/SivA20026/world_happiness_data/assets/137447479/173c4c47-9f3a-4c47-8964-900cd818999e)
+
+
 
 
 
