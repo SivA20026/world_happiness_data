@@ -87,13 +87,12 @@ ggplot(data= world_happiness_data, mapping = aes( x= score,y= gdp_per_capita))+
   geom_smooth(method = 'loess', formula = 'y ~ x')
 
 
-# Checking correlation between GDP per capita  Vs Perceptions_of_corruption
-ggplot(data= world_happiness_data, mapping = aes( x=gdp_per_capita ,y= perceptions_of_corruption))+
+ggplot(data= world_happiness_data, mapping = aes( x=score ,y= perceptions_of_corruption))+
   geom_point(colour = 'blue',size=1)+
   geom_smooth(method = 'loess', formula = 'y ~ x')
 
 # Checking correlation between GDP per capita Vs freedom_to_make_life_choices
-ggplot(data= world_happiness_data, mapping = aes( x=gdp_per_capita,y=freedom_to_make_life_choices))+
+ggplot(data= world_happiness_data, mapping = aes(x= gdp_per_capita, y= healthy_life_expectancy))+
   geom_point(colour = 'black',size=1)+
 geom_smooth(method = 'loess',formula ="y ~ x")
 
