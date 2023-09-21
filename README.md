@@ -27,6 +27,7 @@ I try to find the correlation between the GDP per capita & healthy life expectan
 
 **4**.Represent Data in World_Map based on **Countries score**
 
-![image](https://github.com/SivA20026/world_happiness_data/assets/137447479/b239c6be-6b16-41bc-9856-bd5465f4bcf3)
+![image](https://github.com/SivA20026/world_happiness_data/assets/137447479/720189fe-fe7b-4bca-b4aa-e9b2090be78c)
+
 
 This map shows the **countries’ scores on the World Happiness Report**, which measures how happy people are in different nations. The scores range from**1 to 7**, with higher scores indicating more happiness.
