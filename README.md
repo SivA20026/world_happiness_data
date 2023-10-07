@@ -13,7 +13,7 @@ After Completing **Data Cleaning** & **Data validation** in **R Language**
 **2**.Correlation Between **Country_score & perceptions_of_corruption**
 ![image](https://github.com/SivA20026/world_happiness_data/assets/137447479/08740ca6-cef6-417f-9603-f0d3945111cc)
  
- In this Correlation i try different varible in in our world happiness data. Country score and perception_of_corruption varible. There is **No correlation on two varible**. It mean country was Preception_of_corruption not impact the country happiness ranking score.
+ In this Correlation i try different varible in in our world happiness data. Country score and perception_of_corruption variables. There is **No correlation on two variables**. It mean country was Preception_of_corruption not impact the country happiness ranking score.
 
 ****3**.Correlation Between **GDP per capita  & healthy_life_expectancy****
 
